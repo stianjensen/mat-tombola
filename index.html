@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
 <body>
-<ul id="recipes" />
-<script>
-fetch('/index.txt').then(response => response.json()).then(recipes => {
+  <ul id="recipes"></ul>
+  <script>
+fetch('/index.txt').then(response => response.text()).then(recipes => {
   for (const recipe of recipes.split('\n')) {
     const li = document.createElement('li');
     li.textContent = recipe.replace('.md', '');
     document.querySelector('#recipes').appendChild(li);
   }
 });
-</script>
+  </script>
 </body>
 </html>
