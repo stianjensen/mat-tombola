@@ -3,7 +3,7 @@
 <body>
   <ul id="recipes"></ul>
   <script>
-fetch('/index.txt').then(response => response.text()).then(recipes => {
+fetch('index.txt').then(response => response.text()).then(recipes => {
   for (const recipe of recipes.split('\n')) {
     const li = document.createElement('li');
     li.textContent = recipe.replace('.md', '');
